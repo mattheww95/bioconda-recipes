@@ -9,6 +9,8 @@ source:
   sha256: 63cbed87699d4689df0993c775590575a4d6e9c1af2b8e6c3d572b73a3ecd274
 
 build:
+  run_exports:
+    - {{ pin_subpackage('beave', max_pin="x.x") }}
   entry_points:
     - beave = beave.__main__:async_main
   skip: true # [win]
@@ -16,8 +18,6 @@ build:
   number: 0
 
 requirements:
-  run_exports:
-    - {{ pin_subpackage('beave', max_pin="x.x") }}
   build:
     - cmake >=4.2.3
     - pip >=26.0.1
