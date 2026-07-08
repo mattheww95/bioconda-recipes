@@ -16,6 +16,8 @@ build:
   number: 0
 
 requirements:
+  run_exports:
+    - {{ pin_subpackage('beave', max_pin="x.x") }}
   build:
     - cmake >=4.2.3
     - pip >=26.0.1
