@@ -13,21 +13,16 @@ build:
     - {{ pin_subpackage('beave', max_pin="x.x") }}
   entry_points:
     - beave = beave.__main__:async_main
-  skip: true # [win]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
-  script_env:
-    - MACOSX_DEPLOYMENT_TARGET=15.0 # [osx]
 
 requirements:
   build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }} 
+    - {{ stdlib('c') }}
     - cmake >=4.2.3
     - pip >=26.0.1
-    - python >=3.14.0,<4.0.0
-    - gcc_linux-64 # [linux]
-    - gxx_linux-64 # [linux]
-    - gcc_osx-64 # [osx]
-    - gxx_osx-64 # [osx]
     - make
   host:
     - python >=3.13
@@ -58,5 +53,3 @@ about:
 extra:
   recipe-maintainers:
     - mattheww95
-  skip-lints:
-    - should_be_noarch_python # Contains C++ dependency
