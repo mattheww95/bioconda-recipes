@@ -17,7 +17,7 @@ build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
   script_env:
-    - MACOSX_DEPLOYMENT_TARGET=15.0 # [osx]
+    - MACOSX_DEPLOYMENT_TARGET=15.3 # [osx]
 
 requirements:
   build:
