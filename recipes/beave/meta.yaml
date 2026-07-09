@@ -49,7 +49,7 @@ test:
 about:
   home: https://pypi.org/project/beave/
   summary: A very Canadian utility for genomic clustering and distance querying.
-  license: "Apache 2.0"
+  license: "Apache-2.0"
 
 extra:
   recipe-maintainers:
